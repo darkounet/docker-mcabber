@@ -19,3 +19,5 @@ echo "Generating mcabber_${JABBER_SERVER}_config"
 cp /home/mcabber_client/.mcabber/mcabberrc.example /home/mcabber_client/.mcabber/mcabber_${JABBER_SERVER}_config
 
 sed -i -e "s/#JABBER_USERNAME#/${JABBER_USERNAME}/g;s/#JABBER_SERVER#/${JABBER_SERVER}/g" /home/mcabber_client/.mcabber/mcabber_${JABBER_SERVER}_config
+
+mcabber -f /home/mcabber_client/.mcabber/mcabber_${JABBER_SERVER}_config

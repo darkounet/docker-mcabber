@@ -36,4 +36,4 @@ RUN /home/mcabber_client/scripts/mcabber_config.sh
 VOLUME ["/home/mcabber_client/.mcabber", "/home/mcabber_client/scripts/"]
 USER mcabber_client
 
-CMD ["mcabber"]
+CMD ["/home/mcabber_client/scripts/mcabber_config.sh"]

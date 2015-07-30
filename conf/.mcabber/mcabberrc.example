@@ -1,12 +1,5 @@
-# docker-mcabber
-
-
-
-You have to create a configuration file for mcabber
-
-```
-set jid = user@jabber.example.com
-set server = jabber.example.com
+set jid = #JABBER_USERNAME#
+set server = #JABBER_SERVER#
 
 set ignore_self_presence = 1
 set tls = 1
@@ -33,5 +26,3 @@ bind 269 = roster toggle_offline
 bind 276 = roster toggle
 bind 521 = buffer up
 bind 514 = buffer down
-
-```

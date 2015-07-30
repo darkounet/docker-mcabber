@@ -11,6 +11,10 @@ ENV HOSTNAME mcabber.docker.lan
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 
+ENV JABBER_USERNAME
+ENV JABBER_SERVER
+ENV LANG C.UTF-8
+
 RUN useradd -ms /bin/bash mcabber_client
 
 RUN apt-get update
@@ -19,5 +23,12 @@ RUN apt-get install -y -qq mcabber
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN mkdir /home/mcabber_client/.mcabber
 
-VOLUME ["/home/mcabber_client/"]
+ADD conf/.mcabber/mcabberrc.example /home/mcabber_client/.mcabber/mcabberrc.example
+
+WORKDIR /home/mcabber_client/.mcabber
+
+VOLUME ["/home/mcabber_client/.mcabber"]
+USER mcabber_client
+CMD ["mcabber"]

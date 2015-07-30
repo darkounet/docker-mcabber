@@ -11,8 +11,8 @@ ENV HOSTNAME mcabber.docker.lan
 ENV DEBIAN_FRONTEND noninteractive
 ENV SHELL /bin/bash
 
-ENV JABBER_USERNAME
-ENV JABBER_SERVER
+ENV JABBER_USERNAME user@jabber.example.com
+ENV JABBER_SERVER jabber.example.com
 ENV LANG C.UTF-8
 
 RUN useradd -ms /bin/bash mcabber_client

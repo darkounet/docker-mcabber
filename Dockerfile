@@ -25,10 +25,14 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir /home/mcabber_client/.mcabber
 
-ADD conf/.mcabber/mcabberrc.example /home/mcabber_client/.mcabber/mcabberrc.example
+ADD ./conf/.mcabber/mcabberrc.example /home/mcabber_client/.mcabber/mcabberrc.example
+
+ADD ./scripts /home/mcabber_client/scripts/
 
 WORKDIR /home/mcabber_client/.mcabber
 
 VOLUME ["/home/mcabber_client/.mcabber"]
 USER mcabber_client
-CMD ["mcabber"]
+
+RUN /home/mcabber_client/scripts/mcabber_config.sh
+RUN ["mcabber"]

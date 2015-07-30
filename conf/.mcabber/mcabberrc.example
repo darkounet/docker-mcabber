@@ -13,6 +13,8 @@ set roster_display_filter = ofdna
 set max_history_blocks = 8
 set message_autoaway = Auto-away (idle)
 set escdelay = 50
+set logging = 1
+set load logs = 1
 
 alias me = say /me
 alias online   = status online

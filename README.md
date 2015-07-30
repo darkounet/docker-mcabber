@@ -1,8 +1,9 @@
 # docker-mcabber
 
-
-
+=======
 You have to create a configuration file for mcabber
+
+*~/.mcabberrc*
 
 ```
 set jid = user@jabber.example.com
@@ -34,4 +35,10 @@ bind 276 = roster toggle
 bind 521 = buffer up
 bind 514 = buffer down
 
+```
+
+and run mcabber
+
+```
+bash~ mcabber
 ```

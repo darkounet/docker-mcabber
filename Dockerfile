@@ -31,8 +31,9 @@ ADD ./scripts /home/mcabber_client/scripts/
 
 WORKDIR /home/mcabber_client/.mcabber
 
+RUN /home/mcabber_client/scripts/mcabber_config.sh
+
 VOLUME ["/home/mcabber_client/.mcabber"]
 USER mcabber_client
 
-RUN /home/mcabber_client/scripts/mcabber_config.sh
 RUN ["mcabber"]
